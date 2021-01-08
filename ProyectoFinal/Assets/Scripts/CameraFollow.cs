@@ -8,26 +8,31 @@ public class CameraFollow : MonoBehaviour
 
     private bool followPlayer;
     private bool followBait;
-    // Start is called before the first frame update
+    
     void Start()
     {
-        followPlayer = true;
+        followPlayer = false;
         followBait = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        //El bait sigue al player
         Vector3 fPlayer = player.transform.position;
         fPlayer.z = transform.position.z;
 
         Vector3 fBait = bait.transform.position;
         fBait.z = transform.position.z;
         fBait.x = transform.position.x;
-        /*if (player.transform.position.x >= 321f)
+        
+        if (player.transform.position.x <= 155f)
         {
-            follow = true;
-        }*/ 
+            followPlayer = true;
+        }
+        else
+        {
+            followPlayer = false;
+        }
     
         if (followPlayer)
         {  
@@ -44,6 +49,7 @@ public class CameraFollow : MonoBehaviour
         SwitchToBaitCamera();
     }
 
+    //Al presionar espacio se intercambia la cámara al bait
     private void SwitchToBaitCamera()
     {
         if (Input.GetKeyDown(KeyCode.Space))

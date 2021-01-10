@@ -56,11 +56,7 @@ public class FishdexPressed : MonoBehaviour
         fishmon7.enabled = false; fishmon8.enabled = false; fishmon9.enabled = false; fishmon10.enabled = false; fishmon11.enabled = false;
         fishmon12.enabled = false; fishmon13.enabled = false; fishmon14.enabled = false; fishmon15.enabled = false; fishmon16.enabled = false;
         fishmon17.enabled = false; fishmon18.enabled = false; fishmon19.enabled = false; fishmon20.enabled = false; fishmon21.enabled = false;
-        if (fishmon1.enabled == true)
-        {
-            fishmon1.enabled = false;
-        }
-        else
+        if (fishmon1.enabled == false)
         {
             fishmon1.enabled = true;
         }
@@ -72,11 +68,7 @@ public class FishdexPressed : MonoBehaviour
         fishmon7.enabled = false; fishmon8.enabled = false; fishmon9.enabled = false; fishmon10.enabled = false; fishmon11.enabled = false;
         fishmon12.enabled = false; fishmon13.enabled = false; fishmon14.enabled = false; fishmon15.enabled = false; fishmon16.enabled = false;
         fishmon17.enabled = false; fishmon18.enabled = false; fishmon19.enabled = false; fishmon20.enabled = false; fishmon21.enabled = false;
-        if (fishmon2.enabled == true)
-        {
-            fishmon2.enabled = false;
-        }
-        else
+        if (fishmon2.enabled == false)
         {
             fishmon2.enabled = true;
         }
@@ -88,11 +80,7 @@ public class FishdexPressed : MonoBehaviour
         fishmon7.enabled = false; fishmon8.enabled = false; fishmon9.enabled = false; fishmon10.enabled = false; fishmon11.enabled = false;
         fishmon12.enabled = false; fishmon13.enabled = false; fishmon14.enabled = false; fishmon15.enabled = false; fishmon16.enabled = false;
         fishmon17.enabled = false; fishmon18.enabled = false; fishmon19.enabled = false; fishmon20.enabled = false; fishmon21.enabled = false;
-        if (fishmon3.enabled == true)
-        {
-            fishmon3.enabled = false;
-        }
-        else
+        if (fishmon3.enabled == false)
         {
             fishmon3.enabled = true;
         }
@@ -104,11 +92,7 @@ public class FishdexPressed : MonoBehaviour
         fishmon7.enabled = false; fishmon8.enabled = false; fishmon9.enabled = false; fishmon10.enabled = false; fishmon11.enabled = false;
         fishmon12.enabled = false; fishmon13.enabled = false; fishmon14.enabled = false; fishmon15.enabled = false; fishmon16.enabled = false;
         fishmon17.enabled = false; fishmon18.enabled = false; fishmon19.enabled = false; fishmon20.enabled = false; fishmon21.enabled = false;
-        if (fishmon4.enabled == true)
-        {
-            fishmon4.enabled = false;
-        }
-        else
+        if (fishmon4.enabled == false)
         {
             fishmon4.enabled = true;
         }
@@ -120,11 +104,7 @@ public class FishdexPressed : MonoBehaviour
         fishmon7.enabled = false; fishmon8.enabled = false; fishmon9.enabled = false; fishmon10.enabled = false; fishmon11.enabled = false;
         fishmon12.enabled = false; fishmon13.enabled = false; fishmon14.enabled = false; fishmon15.enabled = false; fishmon16.enabled = false;
         fishmon17.enabled = false; fishmon18.enabled = false; fishmon19.enabled = false; fishmon20.enabled = false; fishmon21.enabled = false;
-        if (fishmon5.enabled == true)
-        {
-            fishmon5.enabled = false;
-        }
-        else
+        if (fishmon5.enabled == false)
         {
             fishmon5.enabled = true;
         }
@@ -136,11 +116,7 @@ public class FishdexPressed : MonoBehaviour
         fishmon7.enabled = false; fishmon8.enabled = false; fishmon9.enabled = false; fishmon10.enabled = false; fishmon11.enabled = false;
         fishmon12.enabled = false; fishmon13.enabled = false; fishmon14.enabled = false; fishmon15.enabled = false; fishmon16.enabled = false;
         fishmon17.enabled = false; fishmon18.enabled = false; fishmon19.enabled = false; fishmon20.enabled = false; fishmon21.enabled = false;
-        if (fishmon6.enabled == true)
-        {
-            fishmon6.enabled = false;
-        }
-        else
+        if (fishmon6.enabled == false)
         {
             fishmon6.enabled = true;
         }
@@ -152,11 +128,7 @@ public class FishdexPressed : MonoBehaviour
         fishmon6.enabled = false; fishmon8.enabled = false; fishmon9.enabled = false; fishmon10.enabled = false; fishmon11.enabled = false;
         fishmon12.enabled = false; fishmon13.enabled = false; fishmon14.enabled = false; fishmon15.enabled = false; fishmon16.enabled = false;
         fishmon17.enabled = false; fishmon18.enabled = false; fishmon19.enabled = false; fishmon20.enabled = false; fishmon21.enabled = false;
-        if (fishmon7.enabled == true)
-        {
-            fishmon7.enabled = false;
-        }
-        else
+        if (fishmon7.enabled == false)
         {
             fishmon7.enabled = true;
         }
@@ -168,11 +140,7 @@ public class FishdexPressed : MonoBehaviour
         fishmon6.enabled = false; fishmon7.enabled = false; fishmon9.enabled = false; fishmon10.enabled = false; fishmon11.enabled = false;
         fishmon12.enabled = false; fishmon13.enabled = false; fishmon14.enabled = false; fishmon15.enabled = false; fishmon16.enabled = false;
         fishmon17.enabled = false; fishmon18.enabled = false; fishmon19.enabled = false; fishmon20.enabled = false; fishmon21.enabled = false;
-        if (fishmon8.enabled == true)
-        {
-            fishmon8.enabled = false;
-        }
-        else
+        if (fishmon8.enabled == false)
         {
             fishmon8.enabled = true;
         }
@@ -184,11 +152,7 @@ public class FishdexPressed : MonoBehaviour
         fishmon6.enabled = false; fishmon7.enabled = false; fishmon8.enabled = false; fishmon10.enabled = false; fishmon11.enabled = false;
         fishmon12.enabled = false; fishmon13.enabled = false; fishmon14.enabled = false; fishmon15.enabled = false; fishmon16.enabled = false;
         fishmon17.enabled = false; fishmon18.enabled = false; fishmon19.enabled = false; fishmon20.enabled = false; fishmon21.enabled = false;
-        if (fishmon9.enabled == true)
-        {
-            fishmon9.enabled = false;
-        }
-        else
+        if (fishmon9.enabled == false)
         {
             fishmon9.enabled = true;
         }
@@ -200,11 +164,7 @@ public class FishdexPressed : MonoBehaviour
         fishmon6.enabled = false; fishmon7.enabled = false; fishmon8.enabled = false; fishmon9.enabled = false; fishmon11.enabled = false;
         fishmon12.enabled = false; fishmon13.enabled = false; fishmon14.enabled = false; fishmon15.enabled = false; fishmon16.enabled = false;
         fishmon17.enabled = false; fishmon18.enabled = false; fishmon19.enabled = false; fishmon20.enabled = false; fishmon21.enabled = false;
-        if (fishmon10.enabled == true)
-        {
-            fishmon10.enabled = false;
-        }
-        else
+        if (fishmon10.enabled == false)
         {
             fishmon10.enabled = true;
         }
@@ -216,11 +176,7 @@ public class FishdexPressed : MonoBehaviour
         fishmon6.enabled = false; fishmon7.enabled = false; fishmon8.enabled = false; fishmon9.enabled = false; fishmon10.enabled = false;
         fishmon12.enabled = false; fishmon13.enabled = false; fishmon14.enabled = false; fishmon15.enabled = false; fishmon16.enabled = false;
         fishmon17.enabled = false; fishmon18.enabled = false; fishmon19.enabled = false; fishmon20.enabled = false; fishmon21.enabled = false;
-        if (fishmon11.enabled == true)
-        {
-            fishmon11.enabled = false;
-        }
-        else
+        if (fishmon11.enabled == false)
         {
             fishmon11.enabled = true;
         }
@@ -232,11 +188,7 @@ public class FishdexPressed : MonoBehaviour
         fishmon6.enabled = false; fishmon7.enabled = false; fishmon8.enabled = false; fishmon9.enabled = false; fishmon10.enabled = false;
         fishmon11.enabled = false; fishmon13.enabled = false; fishmon14.enabled = false; fishmon15.enabled = false; fishmon16.enabled = false;
         fishmon17.enabled = false; fishmon18.enabled = false; fishmon19.enabled = false; fishmon20.enabled = false; fishmon21.enabled = false;
-        if (fishmon12.enabled == true)
-        {
-            fishmon12.enabled = false;
-        }
-        else
+        if (fishmon12.enabled == false)
         {
             fishmon12.enabled = true;
         }
@@ -248,11 +200,7 @@ public class FishdexPressed : MonoBehaviour
         fishmon6.enabled = false; fishmon7.enabled = false; fishmon8.enabled = false; fishmon9.enabled = false; fishmon10.enabled = false;
         fishmon11.enabled = false; fishmon12.enabled = false; fishmon14.enabled = false; fishmon15.enabled = false; fishmon16.enabled = false;
         fishmon17.enabled = false; fishmon18.enabled = false; fishmon19.enabled = false; fishmon20.enabled = false; fishmon21.enabled = false;
-        if (fishmon13.enabled == true)
-        {
-            fishmon13.enabled = false;
-        }
-        else
+        if (fishmon13.enabled == false)
         {
             fishmon13.enabled = true;
         }
@@ -264,11 +212,7 @@ public class FishdexPressed : MonoBehaviour
         fishmon6.enabled = false; fishmon7.enabled = false; fishmon8.enabled = false; fishmon9.enabled = false; fishmon10.enabled = false;
         fishmon11.enabled = false; fishmon12.enabled = false; fishmon13.enabled = false; fishmon15.enabled = false; fishmon16.enabled = false;
         fishmon17.enabled = false; fishmon18.enabled = false; fishmon19.enabled = false; fishmon20.enabled = false; fishmon21.enabled = false;
-        if (fishmon14.enabled == true)
-        {
-            fishmon14.enabled = false;
-        }
-        else
+        if (fishmon14.enabled == false)
         {
             fishmon14.enabled = true;
         }
@@ -280,11 +224,7 @@ public class FishdexPressed : MonoBehaviour
         fishmon6.enabled = false; fishmon7.enabled = false; fishmon8.enabled = false; fishmon9.enabled = false; fishmon10.enabled = false;
         fishmon11.enabled = false; fishmon12.enabled = false; fishmon13.enabled = false; fishmon14.enabled = false; fishmon16.enabled = false;
         fishmon17.enabled = false; fishmon18.enabled = false; fishmon19.enabled = false; fishmon20.enabled = false; fishmon21.enabled = false;
-        if (fishmon15.enabled == true)
-        {
-            fishmon15.enabled = false;
-        }
-        else
+        if (fishmon15.enabled == false)
         {
             fishmon15.enabled = true;
         }
@@ -296,11 +236,7 @@ public class FishdexPressed : MonoBehaviour
         fishmon6.enabled = false; fishmon7.enabled = false; fishmon8.enabled = false; fishmon9.enabled = false; fishmon10.enabled = false;
         fishmon11.enabled = false; fishmon12.enabled = false; fishmon13.enabled = false; fishmon14.enabled = false; fishmon15.enabled = false;
         fishmon17.enabled = false; fishmon18.enabled = false; fishmon19.enabled = false; fishmon20.enabled = false; fishmon21.enabled = false;
-        if (fishmon16.enabled == true)
-        {
-            fishmon16.enabled = false;
-        }
-        else
+        if (fishmon16.enabled == false)
         {
             fishmon16.enabled = true;
         }
@@ -312,11 +248,7 @@ public class FishdexPressed : MonoBehaviour
         fishmon6.enabled = false; fishmon7.enabled = false; fishmon8.enabled = false; fishmon9.enabled = false; fishmon10.enabled = false;
         fishmon11.enabled = false; fishmon12.enabled = false; fishmon13.enabled = false; fishmon14.enabled = false; fishmon15.enabled = false;
         fishmon16.enabled = false; fishmon18.enabled = false; fishmon19.enabled = false; fishmon20.enabled = false; fishmon21.enabled = false;
-        if (fishmon17.enabled == true)
-        {
-            fishmon17.enabled = false;
-        }
-        else
+        if (fishmon17.enabled == false)
         {
             fishmon17.enabled = true;
         }
@@ -328,11 +260,7 @@ public class FishdexPressed : MonoBehaviour
         fishmon6.enabled = false; fishmon7.enabled = false; fishmon8.enabled = false; fishmon9.enabled = false; fishmon10.enabled = false;
         fishmon11.enabled = false; fishmon12.enabled = false; fishmon13.enabled = false; fishmon14.enabled = false; fishmon15.enabled = false;
         fishmon16.enabled = false; fishmon17.enabled = false; fishmon19.enabled = false; fishmon20.enabled = false; fishmon21.enabled = false;
-        if (fishmon18.enabled == true)
-        {
-            fishmon18.enabled = false;
-        }
-        else
+        if (fishmon18.enabled == false)
         {
             fishmon18.enabled = true;
         }
@@ -344,11 +272,7 @@ public class FishdexPressed : MonoBehaviour
         fishmon6.enabled = false; fishmon7.enabled = false; fishmon8.enabled = false; fishmon9.enabled = false; fishmon10.enabled = false;
         fishmon11.enabled = false; fishmon12.enabled = false; fishmon13.enabled = false; fishmon14.enabled = false; fishmon15.enabled = false;
         fishmon16.enabled = false; fishmon17.enabled = false; fishmon18.enabled = false; fishmon20.enabled = false; fishmon21.enabled = false;
-        if (fishmon19.enabled == true)
-        {
-            fishmon19.enabled = false;
-        }
-        else
+        if (fishmon19.enabled == false)
         {
             fishmon19.enabled = true;
         }
@@ -360,11 +284,7 @@ public class FishdexPressed : MonoBehaviour
         fishmon6.enabled = false; fishmon7.enabled = false; fishmon8.enabled = false; fishmon9.enabled = false; fishmon10.enabled = false;
         fishmon11.enabled = false; fishmon12.enabled = false; fishmon13.enabled = false; fishmon14.enabled = false; fishmon15.enabled = false;
         fishmon16.enabled = false; fishmon17.enabled = false; fishmon18.enabled = false; fishmon19.enabled = false; fishmon21.enabled = false;
-        if (fishmon20.enabled == true)
-        {
-            fishmon20.enabled = false;
-        }
-        else
+        if (fishmon20.enabled == false)
         {
             fishmon20.enabled = true;
         }
@@ -376,11 +296,7 @@ public class FishdexPressed : MonoBehaviour
         fishmon6.enabled = false; fishmon7.enabled = false; fishmon8.enabled = false; fishmon9.enabled = false; fishmon10.enabled = false;
         fishmon11.enabled = false; fishmon12.enabled = false; fishmon13.enabled = false; fishmon14.enabled = false; fishmon15.enabled = false;
         fishmon16.enabled = false; fishmon17.enabled = false; fishmon18.enabled = false; fishmon19.enabled = false; fishmon20.enabled = false;
-        if (fishmon21.enabled == true)
-        {
-            fishmon21.enabled = false;
-        }
-        else
+        if (fishmon21.enabled == false)
         {
             fishmon21.enabled = true;
         }

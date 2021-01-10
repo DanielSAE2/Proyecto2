@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -59,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         SwitchToBait();
+        BackMenu();
     }
 
     //Al presionar espacio intercambia el bait entre activo e inactivo
@@ -76,6 +78,15 @@ public class PlayerMovement : MonoBehaviour
                 bait.gameObject.SetActive(false);
                 bait.transform.position = posBait.transform.position;
             }
+        }
+    }
+
+    //Al presionar escape vuelve al menú principal
+    private void BackMenu()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
         }
     }
 }

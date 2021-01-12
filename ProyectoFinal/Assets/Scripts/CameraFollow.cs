@@ -6,7 +6,7 @@ public class CameraFollow : MonoBehaviour
 {
     public GameObject player, bait;
 
-    private bool followPlayer;
+    public bool followPlayer;
     private bool followBait;
     
     void Start()

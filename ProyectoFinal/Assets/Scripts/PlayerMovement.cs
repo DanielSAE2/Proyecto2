@@ -8,17 +8,27 @@ public class PlayerMovement : MonoBehaviour
 {
     private float directionX;
     private float directionY;
-    public GameObject bait, posBait, posBoatStart, posBaitStart;
+
+    [Header("Positions")]
+    public GameObject bait;
+    public GameObject posBait;
+    public GameObject posBoatStart;
+    public GameObject posBaitStart;
+    public GameObject cameraStart;
+
+    [Header("Speeds")]
     public float speedBoat = 20;
     public float speedBait = 20;
-    public bool switchController = false;
 
-    public int maxFuel = 3000;
+    [Header("Fuel")]
+    public int maxFuel = 1000;
     public int currentFuel;
-
     public FuelBar fuelBar;
-
     public GameObject noFuelBtn;
+    public GameObject acceptUpgrade;
+
+    [Header("Switch")]
+    public bool switchController = false;
 
     void Start()
     {
@@ -28,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
         bait.gameObject.SetActive (false); 
 
         noFuelBtn.SetActive (false);
+        acceptUpgrade.SetActive (false);
     }
 
     void Update()
@@ -35,22 +46,29 @@ public class PlayerMovement : MonoBehaviour
         if (!switchController)
         {
             //Límite del barco en la derecha
-            if(transform.position.x <= 182)
+            if (transform.position.x <= 156.4f)
             {
                 directionX = Input.GetAxis("Horizontal");
                 transform.position = new Vector2(transform.position.x + directionX * speedBoat * Time.deltaTime, transform.position.y);
             }
             else
             {
-                transform.position = new Vector2(182, transform.position.y);
+                transform.position = new Vector2(156.4f, transform.position.y);
             }
-            if(Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeyCode.A))
             {
                 LoseFuel(4);
             }
-            if(Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.D))
             {
-                LoseFuel(2);
+                if (transform.position.x >= 156.4f)
+                {
+                    LoseFuel(0);
+                }
+                else
+                {
+                    LoseFuel(2);
+                }
             }
         }
         else
@@ -59,20 +77,20 @@ public class PlayerMovement : MonoBehaviour
             if (bait.transform.localPosition.y <= -4f)
             {
                 //Límite del bait en los marcos laterales de la cámara
-                if (bait.transform.localPosition.x >= -35 && bait.transform.localPosition.x <= 35)
+                if (bait.transform.localPosition.x >= -33 && bait.transform.localPosition.x <= 33)
                 {
                     directionX = Input.GetAxis("Horizontal");
                     directionY = Input.GetAxis("Vertical");
                     bait.transform.position = new Vector2 (bait.transform.position.x + directionX * speedBait/3 * Time.deltaTime,
                                                            bait.transform.position.y + directionY * speedBait * Time.deltaTime);
                 }
-                else if (bait.transform.localPosition.x < -35)
+                else if (bait.transform.localPosition.x < -33)
                 {
-                    bait.transform.localPosition = new Vector2(-35, bait.transform.localPosition.y);
+                    bait.transform.localPosition = new Vector2(-33, bait.transform.localPosition.y);
                 }
-                else if (bait.transform.localPosition.x > 35)
+                else if (bait.transform.localPosition.x > 33)
                 {
-                    bait.transform.localPosition = new Vector2(35, bait.transform.localPosition.y);
+                    bait.transform.localPosition = new Vector2(33, bait.transform.localPosition.y);
                 }
             }
             else
@@ -118,7 +136,7 @@ public class PlayerMovement : MonoBehaviour
 
         fuelBar.SetFuel(currentFuel);
 
-        if(currentFuel <= 0)
+        if (currentFuel <= 0)
         {
             speedBoat = 0;
             noFuelBtn.SetActive (true);
@@ -127,13 +145,36 @@ public class PlayerMovement : MonoBehaviour
 
     public void PayReturn()
     {
-        PayManager.currency -= 50;
-        currentFuel = maxFuel;
+        if (PayManager.currency >= 50)
+        {
+            PayManager.currency -= 50;
+
+            noFuelBtn.SetActive (false);
+            acceptUpgrade.SetActive (true);
+
+            currentFuel = 10000000;
+            fuelBar.SetFuel(currentFuel);
+
+            transform.position = posBoatStart.transform.position;
+            bait.transform.position = posBaitStart.transform.position;
+
+            Vector3 fPlayer = transform.position;
+            fPlayer.z = cameraStart.transform.position.z;
+            cameraStart.transform.position = fPlayer;
+        }
+        else
+        {
+            Debug.Log("PERDISTE WEH");
+        }
+    }
+
+    public void UpgradeAccept()
+    {
+        acceptUpgrade.SetActive(false);
+        
         speedBoat = 20;
-
-        noFuelBtn.SetActive (false);
-
-        transform.position = posBoatStart.transform.position;
-        bait.transform.position = posBaitStart.transform.position;
+        
+        currentFuel = maxFuel;
+        fuelBar.SetFuel(currentFuel);
     }
 }

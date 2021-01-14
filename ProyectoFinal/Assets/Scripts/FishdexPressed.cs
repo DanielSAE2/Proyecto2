@@ -47,8 +47,6 @@ public class FishdexPressed : MonoBehaviour
     private Text fishmon20;
     [SerializeField]
     private Text fishmon21;
-    
-
 
     public void Fishmon1()
     {

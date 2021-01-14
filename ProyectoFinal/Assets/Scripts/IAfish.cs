@@ -7,18 +7,19 @@ public class IAfish : MonoBehaviour
     public enum STATES { PATROL, SEEK, FIGHT, FIGHT0, FIGHT1, FIGHT2, FIGHT3, FIGHT4, FIGHT5, FIGHT6, FIGHT7, RUN}
     public STATES currentState;
     public GameObject Initpoint, Lastpoint;
-    public GameObject Hook;
-    private bool LoockedOn, Hooked, Catched;
+    public GameObject Bait;
+    private bool LoockedOn, Baited, Catched;
     public bool Arrived;
     private float pullcount, Mash, Tirones;
     private Vector3 palPez;
-    public float FishForce; 
+    public float FishForce;
+
     // Start is called before the first frame update
     void Start()
     {
         currentState = STATES.PATROL;
         LoockedOn = false;
-        Hooked = false;
+        Baited = false;
         Arrived = false;
         FishForce = 1;
     }
@@ -30,10 +31,11 @@ public class IAfish : MonoBehaviour
         {
             switch (currentState)
             {
+                //Estado de acecho
                 case STATES.PATROL:
                     if (!LoockedOn)
                     {
-                        if(!Arrived)
+                        if (!Arrived)
                         {
                             if (transform.position == Initpoint.transform.position)
                             {
@@ -55,13 +57,14 @@ public class IAfish : MonoBehaviour
                         currentState = STATES.SEEK;
                     }
                     break;
+                //Estado de persecución
                 case STATES.SEEK:
-                    if (!Hooked)
+                    if (!Baited)
                     {
-                        transform.position = Vector3.MoveTowards(transform.position, Hook.transform.position, 10f * Time.deltaTime);
-                        if (transform.position == Hook.transform.position)
+                        transform.position = Vector3.MoveTowards(transform.position, Bait.transform.position, 10f * Time.deltaTime);
+                        if (transform.position == Bait.transform.position)
                         {
-                            Hooked = true;
+                            Baited = true;
                         }
                         if (!LoockedOn)
                         {
@@ -73,39 +76,39 @@ public class IAfish : MonoBehaviour
                         currentState = STATES.FIGHT;
                     }
                     break;
+                //Estado de lucha
                 case STATES.FIGHT:
-
                     float dir = Random.Range(0, 7);
 
-                    if(dir == 0)
+                    if (dir == 0)
                     {
                         currentState = STATES.FIGHT0;
                     }
-                    if(dir == 1)
+                    if (dir == 1)
                     {
                         currentState = STATES.FIGHT1;
                     }
-                    if(dir == 2)
+                    if (dir == 2)
                     {
                         currentState = STATES.FIGHT2;
                     }
-                    if(dir == 3)
+                    if (dir == 3)
                     {
                         currentState = STATES.FIGHT3;
                     }
-                    if(dir == 4)
+                    if (dir == 4)
                     {
                         currentState = STATES.FIGHT4;
                     }
-                    if(dir == 5)
+                    if (dir == 5)
                     {
                         currentState = STATES.FIGHT5;
                     }
-                    if(dir == 6)
+                    if (dir == 6)
                     {
                         currentState = STATES.FIGHT6;
                     }
-                    if(dir == 7)
+                    if (dir == 7)
                     {
                         currentState = STATES.FIGHT7;
                     }             
@@ -113,13 +116,13 @@ public class IAfish : MonoBehaviour
 
                 case STATES.FIGHT0:
                     pullcount += Time.deltaTime;
-                    Hook.transform.position = transform.position;
+                    Bait.transform.position = transform.position;
                     FishForce = 1;
                     if (Tirones == 6)
                     {
                         Catched = true;
                     }
-                        if(pullcount < 5)
+                        if (pullcount < 5)
                         {
                             palPez = new Vector3(transform.position.x, 100, transform.position.z);
                             if (FishForce == 1)
@@ -148,7 +151,7 @@ public class IAfish : MonoBehaviour
                             }
                         else
                             {
-                                if(Mash >= 7)
+                                if (Mash >= 7)
                                 {
                                     Mash = 0;
                                     currentState = STATES.FIGHT;
@@ -159,15 +162,16 @@ public class IAfish : MonoBehaviour
                                 }
                             }
                     break;
+                
                 case STATES.FIGHT1:
                     pullcount += Time.deltaTime;
-                    Hook.transform.position = transform.position;
+                    Bait.transform.position = transform.position;
                     FishForce = 1;
                     if (Tirones == 6)
                     {
                         Catched = true;
                     }
-                            if(pullcount < 5)
+                            if (pullcount < 5)
                             {
                                 palPez = new Vector3(100, 100, transform.position.z);
                                 if (FishForce == 1)
@@ -197,7 +201,7 @@ public class IAfish : MonoBehaviour
                             }
                         else
                             {
-                                if(Mash >= 7)
+                                if (Mash >= 7)
                                 {
                                     Mash = 0;
                                     currentState = STATES.FIGHT;
@@ -208,15 +212,16 @@ public class IAfish : MonoBehaviour
                                 }
                             }
                     break;
+
                 case STATES.FIGHT2:
                     pullcount += Time.deltaTime;
-                    Hook.transform.position = transform.position;
+                    Bait.transform.position = transform.position;
                     FishForce = 1;
                     if (Tirones == 6)
                     {
                         Catched = true;
                     }
-                        if(pullcount < 5)
+                        if (pullcount < 5)
                         {
                             palPez = new Vector3(100, transform.position.y, transform.position.z);
                             if (FishForce == 1)
@@ -246,7 +251,7 @@ public class IAfish : MonoBehaviour
                         }
                         else
                             {
-                                if(Mash >= 7)
+                                if (Mash >= 7)
                                 {
                                     Mash = 0;
                                     currentState = STATES.FIGHT;
@@ -257,15 +262,16 @@ public class IAfish : MonoBehaviour
                                 }
                             }
                     break;
+
                 case STATES.FIGHT3:
                     pullcount += Time.deltaTime;
-                    Hook.transform.position = transform.position;
+                    Bait.transform.position = transform.position;
                     FishForce = 1;
                     if (Tirones == 6)
                     {
                         Catched = true;
                     }
-                        if(pullcount < 5)
+                        if (pullcount < 5)
                         {
                             palPez = new Vector3(100, -100, transform.position.z);
                             if (FishForce == 1)
@@ -295,7 +301,7 @@ public class IAfish : MonoBehaviour
                         }
                         else
                             {
-                                if(Mash >= 7)
+                                if (Mash >= 7)
                                 {
                                     Mash = 0;
                                     currentState = STATES.FIGHT;
@@ -306,15 +312,16 @@ public class IAfish : MonoBehaviour
                                 }
                             }
                     break;
+
                 case STATES.FIGHT4:
                     pullcount += Time.deltaTime;
-                    Hook.transform.position = transform.position;
+                    Bait.transform.position = transform.position;
                     FishForce = 1;
                     if (Tirones == 6)
                     {
                         Catched = true;
                     }
-                        if(pullcount < 5)
+                        if (pullcount < 5)
                         {
                             palPez = new Vector3(transform.position.x, -100, transform.position.z);
                             if (FishForce == 1)
@@ -344,7 +351,7 @@ public class IAfish : MonoBehaviour
                         }
                         else
                             {
-                                if(Mash >= 7)
+                                if (Mash >= 7)
                                 {
                                     Mash = 0;
                                     currentState = STATES.FIGHT;
@@ -355,15 +362,16 @@ public class IAfish : MonoBehaviour
                                 }
                             }
                     break;
+
                 case STATES.FIGHT5:
                     pullcount += Time.deltaTime;
-                    Hook.transform.position = transform.position;
+                    Bait.transform.position = transform.position;
                     FishForce = 1;
                     if (Tirones == 6)
                     {
                         Catched = true;
                     }
-                        if(pullcount < 5)
+                        if (pullcount < 5)
                         {
                             palPez = new Vector3(-100, -100, transform.position.z);
                             if (FishForce == 1)
@@ -393,7 +401,7 @@ public class IAfish : MonoBehaviour
                         }
                         else
                             {
-                                if(Mash >= 7)
+                                if (Mash >= 7)
                                 {
                                     Mash = 0;
                                     currentState = STATES.FIGHT;
@@ -404,15 +412,16 @@ public class IAfish : MonoBehaviour
                                 }
                             }
                     break;
+
                 case STATES.FIGHT6:
                     pullcount += Time.deltaTime;
-                    Hook.transform.position = transform.position;
+                    Bait.transform.position = transform.position;
                     FishForce = 1;
                     if (Tirones == 6)
                     {
                         Catched = true;
                     }
-                        if(pullcount < 5)
+                        if (pullcount < 5)
                         {
                             palPez = new Vector3(-100, transform.position.y, transform.position.z);
                             if (FishForce == 1)
@@ -442,7 +451,7 @@ public class IAfish : MonoBehaviour
                         }
                         else
                             {
-                                if(Mash >= 7)
+                                if (Mash >= 7)
                                 {
                                     Mash = 0;
                                     currentState = STATES.FIGHT;
@@ -453,15 +462,16 @@ public class IAfish : MonoBehaviour
                                 }
                             }
                     break;
+                
                 case STATES.FIGHT7:
                     pullcount += Time.deltaTime;
-                    Hook.transform.position = transform.position;
+                    Bait.transform.position = transform.position;
                     FishForce = 1;
                     if (Tirones == 6)
                     {
                         Catched = true;
                     }
-                        if(pullcount < 5)
+                        if (pullcount < 5)
                         {
                             palPez = new Vector3(-100, 100, transform.position.z);
                             if (FishForce == 1)
@@ -491,7 +501,7 @@ public class IAfish : MonoBehaviour
                         }
                         else
                             {
-                                if(Mash >= 7)
+                                if (Mash >= 7)
                                 {
                                     Mash = 0;
                                     currentState = STATES.FIGHT;
@@ -502,6 +512,7 @@ public class IAfish : MonoBehaviour
                                 }
                             }
                     break;
+                //Estado de escape
                 case STATES.RUN:
                     transform.position = Vector3.MoveTowards(transform.position, new Vector3(Random.Range(-100, 200), Random.Range(-100, 200), transform.position.z), 20f * Time.deltaTime);
                     Destroy(this, 3f);
@@ -512,13 +523,13 @@ public class IAfish : MonoBehaviour
         }
         else
         {
-            transform.position = Hook.transform.position;
+            transform.position = Bait.transform.position;
         }
         
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Bait")
+        if (collision.tag == "Bait")
         {
             LoockedOn = true;
         }

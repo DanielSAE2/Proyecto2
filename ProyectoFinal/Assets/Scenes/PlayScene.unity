@@ -2925,7 +2925,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 156.4, y: 96.6, z: -107.2}
+  m_LocalPosition: {x: 155, y: 96.6, z: -107.2}
   m_LocalScale: {x: 0.7660488, y: 0.7660488, z: 0.7660488}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3434,15 +3434,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1219811041}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e675d27df5f19c4c8aa00311e2153a3, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ea37d35f8065244e92646532ed6ac9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
   Initpoint: {fileID: 1327037836}
   Lastpoint: {fileID: 1548472050}
-  Bait: {fileID: 1026486861}
+  Hook: {fileID: 1026486861}
   Arrived: 0
   FishForce: 0
+  Tirones: 0
+  Mash: 0
 --- !u!212 &1219811044
 SpriteRenderer:
   m_ObjectHideFlags: 0

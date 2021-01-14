@@ -6,6 +6,7 @@ ScriptsOnlyBuild:
     - FishdexPressed
     - FuelBar
     - IAfish
+    - Parallax
     - PayManager
     - PlayerMovement
     Unity.Rider.Editor.dll:
@@ -242,6 +243,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13846}
     - Class: 114
       Script: {instanceID: 13882}
+    - Class: 114
+      Script: {instanceID: 33704}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -725,6 +728,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 697beb16d87251227b39de32e68f8fb1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Parallax
   platform: 5
   scenePathNames:
   - Assets/Scenes/MenuScene.unity

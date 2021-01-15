@@ -8,11 +8,12 @@ public class IAfish : MonoBehaviour
     public STATES currentState;
     public GameObject Initpoint, Lastpoint;
     public GameObject Hook;
-    private bool LoockedOn, Hooked, Catched;
-    public bool Arrived;
+    private bool LoockedOn, Catched;
+    public bool Arrived, Hooked;
     private float pullcount;
     private Vector3 palPez;
     public float FishForce, Tirones, Mash; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -79,6 +80,7 @@ public class IAfish : MonoBehaviour
                     Mash = 0;
                     if (Tirones == 3)
                     {
+                        Hooked = false;
                         Catched = true;
                     }
                     if (dir == 0)
@@ -129,16 +131,16 @@ public class IAfish : MonoBehaviour
                         }
                         else
                         {
-                                transform.position = new Vector2(transform.position.x, transform.position.y - 1);
+                            transform.position = new Vector2(transform.position.x, transform.position.y - 1);
                         }
                         if (Input.GetKeyDown(KeyCode.S))
                         {
-                                FishForce = 0;
-                                Mash += 1;
+                            FishForce = 0;
+                            Mash += 1;
                         }
                         if (Input.GetKeyUp(KeyCode.S))
                         {
-                                FishForce = 1;
+                            FishForce = 1;
                         }
                     }
                     else
@@ -444,6 +446,7 @@ public class IAfish : MonoBehaviour
                     break;
                 case STATES.RUN:
                     transform.position = Vector3.MoveTowards(transform.position, new Vector3(Random.Range(-100, 200), Random.Range(-100, 200), transform.position.z), 20f * Time.deltaTime);
+                    Hooked = false;
                     Destroy(gameObject, 3f);
                     break;
                 default:

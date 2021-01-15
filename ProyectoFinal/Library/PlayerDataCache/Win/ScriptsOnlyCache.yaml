@@ -1,14 +1,17 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Bait
     - ButtonsController
     - CameraFollow
+    - DontDestroy
     - FishdexPressed
     - FuelBar
     - IAfish
     - Parallax
     - PayManager
     - PlayerMovement
+    - SettingsManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.Graphs.dll:
@@ -28,8 +31,10 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Outline
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
+    - UnityEngine.UI.Toggle
   sceneClasses:
     Assets/Scenes/FishdexScene.unity:
     - Class: 1
@@ -59,15 +64,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12216}
     - Class: 114
-      Script: {instanceID: 12458}
+      Script: {instanceID: 12460}
     - Class: 114
-      Script: {instanceID: 12922}
+      Script: {instanceID: 12924}
     - Class: 114
-      Script: {instanceID: 13278}
+      Script: {instanceID: 13280}
     - Class: 114
-      Script: {instanceID: 13462}
+      Script: {instanceID: 13464}
     - Class: 114
-      Script: {instanceID: 13846}
+      Script: {instanceID: 13848}
+    - Class: 114
+      Script: {instanceID: 32510}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -101,6 +108,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
@@ -112,15 +123,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12018}
     - Class: 114
-      Script: {instanceID: 12458}
+      Script: {instanceID: 12460}
     - Class: 114
-      Script: {instanceID: 12922}
+      Script: {instanceID: 12924}
     - Class: 114
-      Script: {instanceID: 13278}
+      Script: {instanceID: 13280}
     - Class: 114
-      Script: {instanceID: 13462}
+      Script: {instanceID: 13464}
     - Class: 114
-      Script: {instanceID: 13846}
+      Script: {instanceID: 13780}
+    - Class: 114
+      Script: {instanceID: 13848}
+    - Class: 114
+      Script: {instanceID: 61238}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -136,6 +151,12 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
       Script: {instanceID: 0}
     - Class: 850595691
       Script: {instanceID: 0}
@@ -165,15 +186,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12018}
     - Class: 114
-      Script: {instanceID: 12458}
+      Script: {instanceID: 12460}
     - Class: 114
-      Script: {instanceID: 12922}
+      Script: {instanceID: 12924}
     - Class: 114
-      Script: {instanceID: 13278}
+      Script: {instanceID: 13280}
     - Class: 114
-      Script: {instanceID: 13462}
+      Script: {instanceID: 13464}
     - Class: 114
-      Script: {instanceID: 13846}
+      Script: {instanceID: 13780}
+    - Class: 114
+      Script: {instanceID: 13848}
+    - Class: 114
+      Script: {instanceID: 13866}
+    - Class: 114
+      Script: {instanceID: 13884}
+    - Class: 114
+      Script: {instanceID: 32510}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -189,6 +218,12 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
       Script: {instanceID: 0}
     - Class: 850595691
       Script: {instanceID: 0}
@@ -222,29 +257,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12018}
     - Class: 114
-      Script: {instanceID: 12458}
+      Script: {instanceID: 12370}
     - Class: 114
-      Script: {instanceID: 12598}
+      Script: {instanceID: 12460}
     - Class: 114
-      Script: {instanceID: 12738}
+      Script: {instanceID: 12508}
     - Class: 114
-      Script: {instanceID: 12820}
+      Script: {instanceID: 12602}
     - Class: 114
-      Script: {instanceID: 12922}
+      Script: {instanceID: 12822}
     - Class: 114
-      Script: {instanceID: 13216}
+      Script: {instanceID: 12924}
     - Class: 114
-      Script: {instanceID: 13278}
+      Script: {instanceID: 13218}
     - Class: 114
-      Script: {instanceID: 13452}
+      Script: {instanceID: 13280}
     - Class: 114
-      Script: {instanceID: 13462}
+      Script: {instanceID: 13454}
     - Class: 114
-      Script: {instanceID: 13846}
+      Script: {instanceID: 13464}
     - Class: 114
-      Script: {instanceID: 13882}
+      Script: {instanceID: 13848}
     - Class: 114
-      Script: {instanceID: 33704}
+      Script: {instanceID: 13884}
+    - Class: 114
+      Script: {instanceID: 24042}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -430,6 +467,12 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
+      Hash: 697beb16d87251227b39de32e68f8fb1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Parallax
+  - hash:
+      serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -452,6 +495,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SpriteAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 7716937d9fe054481ab38fbc302c0c59
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: IAfish
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -482,12 +531,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 613f39e61573fdacebb0dbfaeacbea87
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: IAfish
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -730,10 +773,28 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 697beb16d87251227b39de32e68f8fb1
+      Hash: 7c070ecd798ebdcbc18da103c554692f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Parallax
+    className: Bait
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PoolManager
+  - hash:
+      serializedVersion: 2
+      Hash: d835e37be8caf473a0d64dc941f2a2a8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SettingsManager
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DontDestroy
   platform: 5
   scenePathNames:
   - Assets/Scenes/MenuScene.unity

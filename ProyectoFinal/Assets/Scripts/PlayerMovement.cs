@@ -27,8 +27,11 @@ public class PlayerMovement : MonoBehaviour
     public GameObject noFuelBtn;
     public GameObject acceptUpgrade;
 
-    [Header("Switch")]
+    [Header("Booleans")]
     public bool switchController = false;
+
+    [Header("IAFish")]
+    private Bait fish;
 
     void Start()
     {
@@ -43,13 +46,21 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        fish = bait.GetComponent<Bait>();
+
         if (!switchController)
         {
             //Límite del barco en la derecha
             if (transform.position.x <= 156.4f)
             {
-                directionX = Input.GetAxis("Horizontal");
-                transform.position = new Vector2(transform.position.x + directionX * speedBoat * Time.deltaTime, transform.position.y);
+                if (Input.GetKey(KeyCode.A))
+                {
+                    transform.position = new Vector2(transform.position.x - 1 * speedBoat * Time.deltaTime, transform.position.y);
+                }
+                if (Input.GetKey(KeyCode.D))
+                {
+                    transform.position = new Vector2(transform.position.x + 1 * speedBoat/2 * Time.deltaTime, transform.position.y); 
+                }
             }
             else
             {
@@ -106,17 +117,20 @@ public class PlayerMovement : MonoBehaviour
     //Al presionar espacio intercambia el bait entre activo e inactivo
     private void SwitchToBait()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!fish.fishCatched)
         {
-            switchController = !switchController;
-            if (bait.gameObject.activeSelf == false)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                bait.gameObject.SetActive(true);
-            }
-            else
-            {
-                bait.gameObject.SetActive(false);
-                bait.transform.position = posBait.transform.position;
+                switchController = !switchController;
+                if (bait.gameObject.activeSelf == false)
+                {
+                    bait.gameObject.SetActive(true);
+                }
+                else
+                {
+                    bait.gameObject.SetActive(false);
+                    bait.transform.position = posBait.transform.position;
+                }
             }
         }
     }

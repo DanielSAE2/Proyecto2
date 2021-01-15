@@ -38,12 +38,16 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\FishdexPressed.cs" />
      <Compile Include="Assets\Scripts\Parallax.cs" />
+     <Compile Include="Assets\Scripts\IAfish.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\PayManager.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\ButtonsController.cs" />
      <Compile Include="Assets\Scripts\FuelBar.cs" />
-     <Compile Include="Assets\Scripts\IAfish.cs" />
+     <Compile Include="Assets\Scripts\Bait.cs" />
+     <Compile Include="Assets\Scripts\PoolManager.cs" />
+     <Compile Include="Assets\Scripts\SettingsManager.cs" />
+     <Compile Include="Assets\Scripts\DontDestroy.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.11f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

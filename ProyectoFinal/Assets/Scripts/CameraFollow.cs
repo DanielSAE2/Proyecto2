@@ -9,6 +9,8 @@ public class CameraFollow : MonoBehaviour
     public bool followPlayer;
     private bool followBait;
     
+    private Bait fish;
+
     void Start()
     {
         followPlayer = false;
@@ -17,6 +19,8 @@ public class CameraFollow : MonoBehaviour
 
     void Update()
     {
+        fish = bait.GetComponent<Bait>();
+
         //El bait sigue al player
         Vector3 fPlayer = player.transform.position;
         fPlayer.z = transform.position.z;
@@ -52,9 +56,12 @@ public class CameraFollow : MonoBehaviour
     //Al presionar espacio se intercambia la cámara al bait
     private void SwitchToBaitCamera()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!fish.fishCatched)
         {
-            followBait = !followBait;
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                followBait = !followBait;
+            }
         }
     }
 }

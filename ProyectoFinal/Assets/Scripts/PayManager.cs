@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class PayManager : MonoBehaviour
 {
     public Text money;
-    public static int currency = 500;
+    public static int currency = 250;
     public Text upgradeBoat;
-    public static int boatUpgrade = 25;
+    public static int boatUpgrade = 50;
     public Text upgradeBait;
-    public static int baitUpgrade = 50;
+    public static int baitUpgrade = 100;
 
     // Start is called before the first frame update
     void Start()

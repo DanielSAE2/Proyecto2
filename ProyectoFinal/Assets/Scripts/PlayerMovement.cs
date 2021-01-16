@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
@@ -26,12 +27,15 @@ public class PlayerMovement : MonoBehaviour
     public FuelBar fuelBar;
     public GameObject noFuelBtn;
     public GameObject acceptUpgrade;
+    public GameObject lostPanel;
 
     [Header("Booleans")]
     public bool switchController = false;
 
     [Header("IAFish")]
     private Bait fish;
+
+    private AudioSource audioBoat;
 
     void Start()
     {
@@ -42,6 +46,8 @@ public class PlayerMovement : MonoBehaviour
 
         noFuelBtn.SetActive (false);
         acceptUpgrade.SetActive (false);
+
+        audioBoat = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -110,6 +116,7 @@ public class PlayerMovement : MonoBehaviour
 
             }
         }
+        MovingBoat();
         SwitchToBait();
         BackMenu();
     }
@@ -178,7 +185,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            Debug.Log("PERDISTE WEH");
+            lostPanel.SetActive (true);
         }
     }
 
@@ -190,5 +197,13 @@ public class PlayerMovement : MonoBehaviour
         
         currentFuel = maxFuel;
         fuelBar.SetFuel(currentFuel);
+    }
+
+    private void MovingBoat()
+    {
+        if (Input.GetKeyDown(KeyCode.A)||Input.GetKeyDown(KeyCode.D))
+        {
+            audioBoat.Play();
+        }
     }
 }

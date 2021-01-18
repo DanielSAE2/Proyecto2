@@ -172,7 +172,7 @@ public class PlayerMovement : MonoBehaviour
 
             noFuelBtn.SetActive (false);
             acceptUpgrade.SetActive (true);
-
+            
             currentFuel = 10000000;
             fuelBar.SetFuel(currentFuel);
 

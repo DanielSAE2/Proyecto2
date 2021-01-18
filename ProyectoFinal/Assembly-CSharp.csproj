@@ -48,6 +48,7 @@
      <Compile Include="Assets\Scripts\ButtonsController.cs" />
      <Compile Include="Assets\Scripts\PoolManager.cs" />
      <Compile Include="Assets\Scripts\FuelBar.cs" />
+     <Compile Include="Assets\Scripts\LoadingMenu.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.11f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

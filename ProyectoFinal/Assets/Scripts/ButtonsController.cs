@@ -12,15 +12,15 @@ public class ButtonsController : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-    
-    //Carga la pantalla de la Fishdex
-    public void Fishdex()
+
+    //Carga la partida
+    public void Play()
     {
         SceneManager.LoadScene(1);
     }
 
-    //Carga la partida
-    public void Play()
+    //Carga la pantalla de la Fishdex
+    public void Fishdex()
     {
         SceneManager.LoadScene(2);
     }

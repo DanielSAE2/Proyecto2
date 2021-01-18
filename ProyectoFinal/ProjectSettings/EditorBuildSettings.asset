@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuScene.unity
     guid: 58eb0237eb530b24993a9055729e383f
   - enabled: 1
-    path: Assets/Scenes/FishdexScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
     path: Assets/Scenes/PlayScene.unity
     guid: 4b61e9f64bf3a4449ba7d1b14ba59354
+  - enabled: 1
+    path: Assets/Scenes/FishdexScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/OptionsScene.unity
     guid: d18421054f87c324dad492f946550558

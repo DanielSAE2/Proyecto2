@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     public float speedBait = 20;
 
     [Header("Fuel")]
-    public int maxFuel = 3000;
+    public int maxFuel = 1500;
     public int currentFuel;
     public FuelBar fuelBar;
     public GameObject noFuelBtn;

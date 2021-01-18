@@ -8,6 +8,7 @@ ScriptsOnlyBuild:
     - FishdexPressed
     - FuelBar
     - IAfish
+    - LoadingMenu
     - Parallax
     - PayManager
     - PlayerMovement
@@ -117,15 +118,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12788}
     - Class: 114
-      Script: {instanceID: 13244}
+      Script: {instanceID: 13246}
     - Class: 114
-      Script: {instanceID: 14124}
+      Script: {instanceID: 14126}
     - Class: 114
-      Script: {instanceID: 14722}
+      Script: {instanceID: 14724}
     - Class: 114
-      Script: {instanceID: 15752}
+      Script: {instanceID: 15754}
     - Class: 114
-      Script: {instanceID: 15840}
+      Script: {instanceID: 15842}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -200,61 +201,65 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13114}
     - Class: 114
-      Script: {instanceID: 13244}
+      Script: {instanceID: 13116}
     - Class: 114
-      Script: {instanceID: 13364}
+      Script: {instanceID: 13246}
     - Class: 114
-      Script: {instanceID: 13600}
+      Script: {instanceID: 13366}
     - Class: 114
-      Script: {instanceID: 13646}
+      Script: {instanceID: 13602}
     - Class: 114
-      Script: {instanceID: 13708}
+      Script: {instanceID: 13648}
     - Class: 114
-      Script: {instanceID: 13826}
+      Script: {instanceID: 13710}
     - Class: 114
-      Script: {instanceID: 14124}
+      Script: {instanceID: 13828}
     - Class: 114
-      Script: {instanceID: 14152}
+      Script: {instanceID: 14126}
     - Class: 114
-      Script: {instanceID: 14458}
+      Script: {instanceID: 14154}
     - Class: 114
-      Script: {instanceID: 14520}
+      Script: {instanceID: 14460}
     - Class: 114
-      Script: {instanceID: 14540}
+      Script: {instanceID: 14522}
     - Class: 114
-      Script: {instanceID: 14672}
+      Script: {instanceID: 14542}
     - Class: 114
-      Script: {instanceID: 14708}
+      Script: {instanceID: 14674}
     - Class: 114
-      Script: {instanceID: 14716}
+      Script: {instanceID: 14710}
     - Class: 114
-      Script: {instanceID: 14722}
+      Script: {instanceID: 14718}
     - Class: 114
-      Script: {instanceID: 15042}
+      Script: {instanceID: 14724}
     - Class: 114
-      Script: {instanceID: 15116}
+      Script: {instanceID: 15044}
     - Class: 114
-      Script: {instanceID: 15368}
+      Script: {instanceID: 15118}
     - Class: 114
-      Script: {instanceID: 15558}
+      Script: {instanceID: 15370}
     - Class: 114
-      Script: {instanceID: 15604}
+      Script: {instanceID: 15560}
     - Class: 114
-      Script: {instanceID: 15722}
+      Script: {instanceID: 15606}
     - Class: 114
-      Script: {instanceID: 15752}
+      Script: {instanceID: 15724}
     - Class: 114
-      Script: {instanceID: 15808}
+      Script: {instanceID: 15754}
     - Class: 114
       Script: {instanceID: 15810}
     - Class: 114
-      Script: {instanceID: 15840}
+      Script: {instanceID: 15812}
     - Class: 114
-      Script: {instanceID: 15868}
+      Script: {instanceID: 15842}
     - Class: 114
-      Script: {instanceID: 16002}
+      Script: {instanceID: 15870}
     - Class: 114
-      Script: {instanceID: 16010}
+      Script: {instanceID: 15906}
+    - Class: 114
+      Script: {instanceID: 16004}
+    - Class: 114
+      Script: {instanceID: 16012}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -270,6 +275,8 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 225
       Script: {instanceID: 0}
     - Class: 241
       Script: {instanceID: 0}
@@ -315,21 +322,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12750}
     - Class: 114
-      Script: {instanceID: 13200}
+      Script: {instanceID: 13202}
     - Class: 114
-      Script: {instanceID: 13244}
+      Script: {instanceID: 13246}
     - Class: 114
-      Script: {instanceID: 14124}
+      Script: {instanceID: 14126}
     - Class: 114
-      Script: {instanceID: 14722}
+      Script: {instanceID: 14724}
     - Class: 114
-      Script: {instanceID: 15722}
+      Script: {instanceID: 15724}
     - Class: 114
-      Script: {instanceID: 15752}
+      Script: {instanceID: 15754}
     - Class: 114
-      Script: {instanceID: 15840}
+      Script: {instanceID: 15842}
     - Class: 114
-      Script: {instanceID: 15904}
+      Script: {instanceID: 15906}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -400,33 +407,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13062}
     - Class: 114
-      Script: {instanceID: 13244}
+      Script: {instanceID: 13246}
     - Class: 114
-      Script: {instanceID: 13338}
+      Script: {instanceID: 13340}
     - Class: 114
-      Script: {instanceID: 13500}
+      Script: {instanceID: 13502}
     - Class: 114
-      Script: {instanceID: 13958}
+      Script: {instanceID: 13960}
     - Class: 114
-      Script: {instanceID: 14096}
+      Script: {instanceID: 14098}
     - Class: 114
-      Script: {instanceID: 14124}
+      Script: {instanceID: 14126}
     - Class: 114
-      Script: {instanceID: 14600}
+      Script: {instanceID: 14602}
     - Class: 114
-      Script: {instanceID: 14722}
+      Script: {instanceID: 14724}
     - Class: 114
-      Script: {instanceID: 15050}
+      Script: {instanceID: 15052}
     - Class: 114
-      Script: {instanceID: 15722}
+      Script: {instanceID: 15724}
     - Class: 114
-      Script: {instanceID: 15752}
+      Script: {instanceID: 15754}
     - Class: 114
-      Script: {instanceID: 15840}
+      Script: {instanceID: 15842}
     - Class: 114
-      Script: {instanceID: 15904}
+      Script: {instanceID: 15906}
     - Class: 114
-      Script: {instanceID: 15926}
+      Script: {instanceID: 15928}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -804,6 +811,12 @@ ScriptsOnlyBuild:
     className: UIFoldout
   - hash:
       serializedVersion: 2
+      Hash: 177189db6590b42fd4020b96d6264b40
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LoadingMenu
+  - hash:
+      serializedVersion: 2
       Hash: d835e37be8caf473a0d64dc941f2a2a8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1068,7 +1081,7 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 7eba240412b0d760ae270d3307f7eb16
+      Hash: 52eb934fb9aac8abea0372a72aeb52f2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovement
@@ -1423,7 +1436,7 @@ ScriptsOnlyBuild:
   platform: 5
   scenePathNames:
   - Assets/Scenes/MenuScene.unity
-  - Assets/Scenes/FishdexScene.unity
   - Assets/Scenes/PlayScene.unity
+  - Assets/Scenes/FishdexScene.unity
   - Assets/Scenes/OptionsScene.unity
   playerPath: E:/Darkest Fishing/ProyectoFinal/Proyecto2/ProyectoFinal/Builds/ProyectoFinal.exe

@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject posBoatStart;
     public GameObject posBaitStart;
     public GameObject cameraStart;
+    public float ropeLength = -83f;
 
     [Header("Speeds")]
     public float speedBoat = 20;
@@ -37,6 +38,8 @@ public class PlayerMovement : MonoBehaviour
 
     private AudioSource audioBoat;
 
+
+
     void Start()
     {
         currentFuel = maxFuel;
@@ -48,6 +51,8 @@ public class PlayerMovement : MonoBehaviour
         acceptUpgrade.SetActive (false);
 
         audioBoat = GetComponent<AudioSource>();
+
+        ropeLength = -83f;
     }
 
     void Update()
@@ -91,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             //Límite del bait al nivel del mar
-            if (bait.transform.localPosition.y <= -4f)
+            if (bait.transform.localPosition.y <= -4f && bait.transform.localPosition.y >= ropeLength)
             {
                 //Límite del bait en los marcos laterales de la cámara
                 if (bait.transform.localPosition.x >= -33 && bait.transform.localPosition.x <= 33)
@@ -110,10 +115,13 @@ public class PlayerMovement : MonoBehaviour
                     bait.transform.localPosition = new Vector2(33, bait.transform.localPosition.y);
                 }
             }
-            else
+            if (bait.transform.localPosition.y >= -4f)
             {
                 bait.transform.localPosition = new Vector2(bait.transform.localPosition.x, -4f);
-
+            }
+            if (bait.transform.localPosition.y <= ropeLength)
+            {
+                bait.transform.localPosition = new Vector2(bait.transform.localPosition.x, ropeLength + 0.1f);
             }
         }
         MovingBoat();

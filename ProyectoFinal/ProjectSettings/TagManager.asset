@@ -7,6 +7,27 @@ TagManager:
   - Bait
   - Fish
   - MenuMusic
+  - Anchoa
+  - Pulpo
+  - "Pez le\xF3n"
+  - Morena
+  - Pez volador
+  - Pez globo
+  - Banco de anchoas
+  - Pez leonaco
+  - Pez fugu
+  - Pez luna
+  - Orca asesina
+  - "Tibur\xF3n blanco"
+  - Pez linterna
+  - Avispa de mar
+  - Megalodon
+  - Calamar gigante
+  - Ammonite
+  - Liopleurodon
+  - Nessie
+  - Kraken
+  - Leviathan
   layers:
   - Default
   - TransparentFX

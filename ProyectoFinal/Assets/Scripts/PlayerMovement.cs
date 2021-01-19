@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
@@ -36,9 +35,15 @@ public class PlayerMovement : MonoBehaviour
     [Header("IAFish")]
     private Bait fish;
 
+    [Header("Missions")]
+    public Text ObjectiveName;
+    public int FishAmount, FishCatched;
+    public MissionsManager Mission;
+    public GameObject MissionObject;
+    public GameObject ReturnBtn;
+    public PayManager PayMan;
+
     private AudioSource audioBoat;
-
-
 
     void Start()
     {
@@ -48,85 +53,92 @@ public class PlayerMovement : MonoBehaviour
         bait.gameObject.SetActive (false); 
 
         noFuelBtn.SetActive (false);
-        acceptUpgrade.SetActive (false);
+        acceptUpgrade.SetActive (true);
 
         audioBoat = GetComponent<AudioSource>();
 
-        ropeLength = -83f;
+        ropeLength = -83f;      
     }
 
     void Update()
     {
+        ObjectiveName.text = Mission.Objective + ": " + FishCatched.ToString();
+        FishAmount = Mission.ObjectiveAmount;
+        Debug.Log(acceptUpgrade.activeSelf);
         fish = bait.GetComponent<Bait>();
-
-        if (!switchController)
+        if(acceptUpgrade.activeSelf == false)
         {
-            //Límite del barco en la derecha
-            if (transform.position.x <= 156.4f)
+            if (!switchController)
             {
+                //Límite del barco en la derecha
+                if (transform.position.x <= 156.4f)
+                {
+                    if (Input.GetKey(KeyCode.A))
+                    {
+                        transform.position = new Vector2(transform.position.x - 1 * speedBoat * Time.deltaTime, transform.position.y);
+                    }
+                    if (Input.GetKey(KeyCode.D))
+                    {
+                        transform.position = new Vector2(transform.position.x + 1 * speedBoat / 2 * Time.deltaTime, transform.position.y);
+                    }
+                }
+                else
+                {
+                    transform.position = new Vector2(156.4f, transform.position.y);
+                }
                 if (Input.GetKey(KeyCode.A))
                 {
-                    transform.position = new Vector2(transform.position.x - 1 * speedBoat * Time.deltaTime, transform.position.y);
+                    LoseFuel(4);
                 }
                 if (Input.GetKey(KeyCode.D))
                 {
-                    transform.position = new Vector2(transform.position.x + 1 * speedBoat/2 * Time.deltaTime, transform.position.y); 
+                    if (transform.position.x >= 156.4f)
+                    {
+                        LoseFuel(0);
+                    }
+                    else
+                    {
+                        LoseFuel(2);
+                    }
                 }
             }
             else
             {
-                transform.position = new Vector2(156.4f, transform.position.y);
-            }
-            if (Input.GetKey(KeyCode.A))
-            {
-                LoseFuel(4);
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-                if (transform.position.x >= 156.4f)
+                //Límite del bait al nivel del mar
+                if (bait.transform.localPosition.y <= -4f && bait.transform.localPosition.y >= ropeLength)
                 {
-                    LoseFuel(0);
+                    //Límite del bait en los marcos laterales de la cámara
+                    if (bait.transform.localPosition.x >= -33 && bait.transform.localPosition.x <= 33)
+                    {
+                        directionX = Input.GetAxis("Horizontal");
+                        directionY = Input.GetAxis("Vertical");
+                        bait.transform.position = new Vector2(bait.transform.position.x + directionX * speedBait / 3 * Time.deltaTime,
+                                                               bait.transform.position.y + directionY * speedBait * Time.deltaTime);
+                    }
+                    else if (bait.transform.localPosition.x < -33)
+                    {
+                        bait.transform.localPosition = new Vector2(-33, bait.transform.localPosition.y);
+                    }
+                    else if (bait.transform.localPosition.x > 33)
+                    {
+                        bait.transform.localPosition = new Vector2(33, bait.transform.localPosition.y);
+                    }
                 }
-                else
+                if (bait.transform.localPosition.y >= -4f)
                 {
-                    LoseFuel(2);
+                    bait.transform.localPosition = new Vector2(bait.transform.localPosition.x, -4f);
+                }
+                if (bait.transform.localPosition.y <= ropeLength)
+                {
+                    bait.transform.localPosition = new Vector2(bait.transform.localPosition.x, ropeLength + 0.1f);
                 }
             }
+            MovingBoat();
+            SwitchToBait();
+            BackMenu();
+            WinCondition();
         }
-        else
-        {
-            //Límite del bait al nivel del mar
-            if (bait.transform.localPosition.y <= -4f && bait.transform.localPosition.y >= ropeLength)
-            {
-                //Límite del bait en los marcos laterales de la cámara
-                if (bait.transform.localPosition.x >= -33 && bait.transform.localPosition.x <= 33)
-                {
-                    directionX = Input.GetAxis("Horizontal");
-                    directionY = Input.GetAxis("Vertical");
-                    bait.transform.position = new Vector2 (bait.transform.position.x + directionX * speedBait/3 * Time.deltaTime,
-                                                           bait.transform.position.y + directionY * speedBait * Time.deltaTime);
-                }
-                else if (bait.transform.localPosition.x < -33)
-                {
-                    bait.transform.localPosition = new Vector2(-33, bait.transform.localPosition.y);
-                }
-                else if (bait.transform.localPosition.x > 33)
-                {
-                    bait.transform.localPosition = new Vector2(33, bait.transform.localPosition.y);
-                }
-            }
-            if (bait.transform.localPosition.y >= -4f)
-            {
-                bait.transform.localPosition = new Vector2(bait.transform.localPosition.x, -4f);
-            }
-            if (bait.transform.localPosition.y <= ropeLength)
-            {
-                bait.transform.localPosition = new Vector2(bait.transform.localPosition.x, ropeLength + 0.1f);
-            }
-        }
-        MovingBoat();
-        SwitchToBait();
-        BackMenu();
+        
     }
 
     //Al presionar espacio intercambia el bait entre activo e inactivo
@@ -174,9 +186,9 @@ public class PlayerMovement : MonoBehaviour
 
     public void PayReturn()
     {
-        if (PayManager.currency >= 50)
+        if (PayMan.currency >= 50)
         {
-            PayManager.currency -= 50;
+            PayMan.currency -= 50;
 
             noFuelBtn.SetActive (false);
             acceptUpgrade.SetActive (true);
@@ -190,6 +202,8 @@ public class PlayerMovement : MonoBehaviour
             Vector3 fPlayer = transform.position;
             fPlayer.z = cameraStart.transform.position.z;
             cameraStart.transform.position = fPlayer;
+            MissionObject.SetActive(false);
+            MissionObject.SetActive(true);
         }
         else
         {
@@ -206,12 +220,40 @@ public class PlayerMovement : MonoBehaviour
         currentFuel = maxFuel;
         fuelBar.SetFuel(currentFuel);
     }
+    private void WinCondition()
+    {
+        if(FishCatched == FishAmount)
+        {
+            ReturnBtn.SetActive(true);
+        }
+    }
+    public void ReturnBtnF()
+    {
+        transform.position = posBoatStart.transform.position;
+        bait.transform.position = posBaitStart.transform.position;
 
+        Vector3 fPlayer = transform.position;
+        fPlayer.z = cameraStart.transform.position.z;
+        cameraStart.transform.position = fPlayer;
+
+        PayMan.currency += 200 + (1000 / FishAmount);
+        Mission.enabled = false;//
+        ReturnBtn.SetActive(false);
+        acceptUpgrade.SetActive(true);
+        ObjectiveName.text = null + " " + FishCatched.ToString();
+    }
     private void MovingBoat()
     {
         if (Input.GetKeyDown(KeyCode.A)||Input.GetKeyDown(KeyCode.D))
         {
             audioBoat.Play();
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {      
+        if (other.tag == Mission.Objective)
+        {
+            FishCatched += 1;
         }
     }
 }

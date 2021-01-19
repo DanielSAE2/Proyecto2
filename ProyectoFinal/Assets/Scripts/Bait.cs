@@ -18,7 +18,7 @@ public class Bait : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.tag == "Fish")
+        if (other.tag != "Player")   
         {
             fishCatched = true;
         }
@@ -26,7 +26,7 @@ public class Bait : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "Fish")
+        if (other.tag != "Player")
         {
             fishCatched = false;
         }

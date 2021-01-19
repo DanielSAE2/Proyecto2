@@ -464,8 +464,11 @@ public class IAfish : MonoBehaviour
         if(collision.tag == "Bait")
         {
             LoockedOn = true;
+            Hook = collision.gameObject;
         }
-        
+        if(collision.tag == "Player")
+            Destroy(this.gameObject, 1);
+
     }
     private void OnTriggerExit2D(Collider2D collision)
     {

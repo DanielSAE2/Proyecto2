@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class PayManager : MonoBehaviour
 {
     public Text money;
-    public static int currency = 250;
+    public  int currency = 250;
     public Text upgradeBoat;
     public static int boatUpgrade = 50;
     public Text upgradeBait;

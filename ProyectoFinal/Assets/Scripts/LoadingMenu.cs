@@ -19,11 +19,9 @@ public class LoadingMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        async = SceneManager.LoadSceneAsync(idScene);
-
         canvasGroup = GetComponent<CanvasGroup>();
 
-        StartCoroutine(StartFade(1, 10));
+        StartCoroutine(StartLoadScene());
 
         DontDestroyOnLoad(this.gameObject);
     }
@@ -31,38 +29,38 @@ public class LoadingMenu : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        if (canvasGroup.alpha <= 0.9f && coroutineFadeOut == null)
+        if (async != null)
         {
-            if (!async.isDone)
-            {
-                float progresScene = async.progress + 0.1f;
-                txtLoading.text = "Loading... " + (progresScene * 100) + "%";
-                sliderLoading.value = progresScene;
-            }
-            else
-            {
-                coroutineFadeOut = StartCoroutine(StartFade(0,5f));
-            }
-        }
-        if (coroutineFadeOut != null && canvasGroup.alpha <= 0)
-        {
-            Destroy(this.gameObject);
+            float progresScene = async.progress;
+            txtLoading.text = "Loading... " + (progresScene * 100) + "%";
+            sliderLoading.value = progresScene;
         }
     }
 
     IEnumerator StartFade(float value, float duration)
     {            
-        float alpha = canvasGroup.alpha;
+        float startAlpha = canvasGroup.alpha;
         float time = 0;
         while(time < duration)
         {
-            alpha = Mathf.Lerp(alpha, value, time/duration);
-            canvasGroup.alpha = alpha;
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, value, time/duration);
 
             time += Time.unscaledDeltaTime;
             
             yield return null;
         }
+    }
+
+    IEnumerator StartLoadScene()
+    {
+        yield return StartCoroutine(StartFade(1,3));
+        async = SceneManager.LoadSceneAsync(idScene);
+        while(!async.isDone)
+        {
+            yield return null;
+        }
+        yield return StartCoroutine(StartFade(0,3));
+        Destroy(this.gameObject);
     }
 }
 
